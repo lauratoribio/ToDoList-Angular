@@ -1,12 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-$white: #FEFAE0;
-$red: #ef233c;
-$darkGreen: #283618;
-$green: #606c38;
-$beige: #EECE9F;
-$brown: #DDA15E;
+@import "./styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+}
 
 body {
   background-color: $white;
+  font-family: $primaryFont;
+  min-height: 100vh;
 }
 
