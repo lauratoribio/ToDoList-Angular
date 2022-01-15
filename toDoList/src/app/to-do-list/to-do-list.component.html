@@ -1,1 +1,30 @@
-<p>to-do-list works!</p>
+<h2>¿Que quieres hacer hoy?</h2>
+
+<div class="generator">
+  <label for="task"></label>
+  <input
+    type="text"
+    name="task"
+    id="task"
+    class="generator__input"
+    [(ngModel)]="taskName"
+  />
+  <button
+    class="generator__button"
+    type="button"
+    placeholder="Nueva tarea"
+    (click)="addTask(taskName)"
+  >
+    Crear
+  </button>
+</div>
+
+<ul class="taskList">
+  <li *ngFor="let task of taskList; let indice = index" class="task">
+    <span class="task__name"
+    [ngClass]="{ 'is-done': task.isDone }">{{ task.name }}</span>
+    <button type="button" class="fas fa-check task__button"
+      (click)="taskDone(task)"></button>
+    <button type="button" class="far fa-trash-alt task__button" (click)="deleteTask(indice)"></button>
+  </li>
+</ul>
