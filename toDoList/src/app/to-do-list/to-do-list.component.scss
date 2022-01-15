@@ -6,8 +6,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  &__generator {
 
+  h2 {
+    color: $brown;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+    margin: 2rem 1rem;
+  }
+
+  &__generator {
+  display: flex;
+  border-radius: 50px;
+    input {
+      width: 50vw;
+      padding: 1rem 1rem;
+      background-color: transparent;
+      border: solid 1px $brown;
+      border-radius: 50px;
+    }
   }
 }
 
