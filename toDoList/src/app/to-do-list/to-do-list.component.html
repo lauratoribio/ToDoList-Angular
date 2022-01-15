@@ -21,12 +21,17 @@
   </div>
 
  <ul class="toDoList__taskList">
-  <li *ngFor="let task of taskList; let indice = index" class="task">
-    <span class="task__name"
-    [ngClass]="{ 'is-done': task.isDone }">{{ task.name }}</span>
-    <button type="button" class="fas fa-check task__button"
-      (click)="taskDone(task)"></button>
-    <button type="button" class="far fa-trash-alt task__button" (click)="deleteTask(indice)"></button>
-  </li>
+    <li *ngFor="let task of taskList; let indice = index" class="task">
+      <span class="task__name"
+      [ngClass]="{ 'is-done': task.isDone }">{{ task.name }}</span>
+      <button type="button" class="fas fa-check task__button"
+        (click)="taskDone(task)"></button>
+      <button type="button" class="far fa-trash-alt task__button" (click)="deleteTask(indice)"></button>
+    </li>
+    <li class="task">
+      <span class="task__name">Hacer la comida</span>
+      <button type="button" class="fas fa-check task__button"></button>
+      <button type="button" class="far fa-trash-alt task__button"></button>
+    </li>
  </ul>
 </div>
