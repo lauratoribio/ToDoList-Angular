@@ -10,7 +10,7 @@
   align-items: center;
 
   h2 {
-    color: $brown;
+    color: $green;
     font-size: 3rem;
     line-height: 3.5rem;
     text-align: center;
@@ -22,7 +22,7 @@
   border-radius: 50px;
   margin-bottom: 2.5rem;
     input {
-      width: 50vw;
+      width: 46vw;
       padding: 0.5rem 1.5rem;
       background-color: transparent;
       border: solid 1px $red;
@@ -38,6 +38,7 @@
       }
 
     }
+  
 
     button {
       background-color: $red;
@@ -62,7 +63,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    li {
+    .task {
       background-color: $red;
       padding: 0.5rem 1.5rem;
       width: 70vw;
@@ -71,14 +72,14 @@
       align-items: center;
       border-radius: 50px;
       margin-bottom: 1rem;
-      span {
+      &__name {
         color: $white;
         margin-right: 1rem;
         font-size: 1.2rem;
         line-height: 2rem;
       }
 
-      .task__buttons {
+      &__buttons {
         width: 18vw;
         display: flex;
         align-items: center;
@@ -105,7 +106,7 @@
 }
 
 .is-done-bg {
-  background-color: $green;
+  background-color: $green !important;
 }
 
 @include laptop {
