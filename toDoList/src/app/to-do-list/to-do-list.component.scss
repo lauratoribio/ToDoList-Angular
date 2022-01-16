@@ -1,7 +1,9 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
+
 
 .toDoList {
-  min-height: 87.9vh;
+  min-height: 87.4vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,8 +11,8 @@
 
   h2 {
     color: $brown;
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 3rem;
+    line-height: 3.5rem;
     text-align: center;
     margin: 2rem 1rem;
   }
@@ -21,11 +23,19 @@
   margin-bottom: 2.5rem;
     input {
       width: 50vw;
-      padding: 0.8rem 1rem;
+      padding: 0.5rem 1.5rem;
       background-color: transparent;
       border: solid 1px $red;
       border-radius: 50px;
       margin-right: 1rem;
+      &:focus {
+        font-family: $primaryFont;
+        font-weight: 600;
+        outline: none;
+        border: solid 1px $red;
+        color: $red;
+        font-size: 1.2rem;
+      }
 
     }
 
@@ -34,13 +44,14 @@
       font-family: $primaryFont;
       font-size: 1.2rem;
       color: $beige;
-      padding: 0.8rem 1.2rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 50px;
       border: solid 1px transparent;
+      cursor: pointer;
       &:hover {
-        background-color: beige;
-        border-color: $red;
-        color: $red;
+        background-color: $brown;
+        border-color: $white;
+        color: $white;
       }
     }
   }
@@ -53,29 +64,61 @@
 
     li {
       background-color: $red;
-      padding: 0.5rem 1rem;
-      width: 100%;
+      padding: 0.5rem 1.5rem;
+      width: 70vw;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       border-radius: 50px;
       margin-bottom: 1rem;
       span {
         color: $white;
-        margin-right: 2rem;
+        margin-right: 1rem;
         font-size: 1.2rem;
+        line-height: 2rem;
       }
 
-      button {
-        background-color: $white;
-        border-radius: 50px;
-        padding: 0.5rem 0.5rem;
-        border: none;
-        margin-left: 0.2rem;
+      .task__buttons {
+        width: 18vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+          background-color: $white;
+          border-radius: 50px;
+          padding: 0.5rem 0.5rem;
+          border: none;
+          margin-left: 0.2rem;
+          cursor: pointer;
+          color: $green;
+        }
       }
+
     }
   }
 }
 
 .is-done {
-  background-color: $green;
+  text-decoration: line-through;
+  line-height: 2.5rem;
+}
+
+@include laptop {
+
+  .toDoList {
+
+    &__generator {
+      input {
+        width: 25vw;
+      }
+    }
+
+    &__taskList {
+      li {
+        width: 30vw;
+      }
+    }
+  }
+
 }
