@@ -21,7 +21,7 @@
   </div>
 
  <ul class="toDoList__taskList">
-    <li *ngFor="let task of taskList; let indice = index">
+    <li *ngFor="let task of taskList; let indice = index" [ngClass]="{ 'is-done-bg': task.isDone }">
       <span [ngClass]="{ 'is-done': task.isDone }" class="task__name">{{ task.name }}</span>
       <div class="task__buttons">
         <button type="button" class="fas fa-check task__button"

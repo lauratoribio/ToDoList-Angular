@@ -3,7 +3,7 @@
 
 
 .toDoList {
-  min-height: 87.4vh;
+  min-height: 87vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,6 +102,10 @@
 .is-done {
   text-decoration: line-through;
   line-height: 2.5rem;
+}
+
+.is-done-bg {
+  background-color: $green;
 }
 
 @include laptop {
